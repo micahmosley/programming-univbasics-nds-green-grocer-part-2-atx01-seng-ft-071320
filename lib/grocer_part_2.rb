@@ -7,11 +7,12 @@ def apply_coupons(cart, coupons)
   coupons.each do |coupon|
     new_cart.each do |item|
       if coupon[:item]== item[:item]
-        binding.pry
+        i={}
         item[:count]= item[:count]-coupon[:num]
       
-        new_cart.push(item)
+        i.push(item)
         binding.pry
+        
         new_cart[-1][:item]= "#{coupon[:item]} W/COUPON"
         new_cart[-1][:price]=coupon[:cost]/coupon[:num]
         new_cart[-1][:count]=coupon[:num]
