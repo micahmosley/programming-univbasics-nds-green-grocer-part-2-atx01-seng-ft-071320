@@ -10,10 +10,10 @@ def apply_coupons(cart, coupons)
         i={}
         item[:count]= item[:count]-coupon[:num]
       
-        i.push(item)
-        binding.pry
+        i=item
         
-        new_cart[-1][:item]= "#{coupon[:item]} W/COUPON"
+        i[:item]= "#{coupon[:item]} W/COUPON"
+        binding.pry
         new_cart[-1][:price]=coupon[:cost]/coupon[:num]
         new_cart[-1][:count]=coupon[:num]
       end 
